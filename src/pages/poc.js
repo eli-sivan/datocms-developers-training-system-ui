@@ -6,7 +6,7 @@ import Layout from "../components/layout";
 const PocPage = ({ data }) => (
   <Layout>
     <Masonry className="showcase">
-      {data.allQuestions.map(({
+      {data.allDatoCmsQuestion.edges.map(({
                                 id,
                                 option1,
                                 option2,
@@ -40,13 +40,18 @@ export default PocPage;
 
 export const query = graphql`
   query allQuestionsQuery {
-    allQuestions {
-      option1
-      option2
-      option3
-      option4
-      subject
-      description
-      id
-    }
+      allDatoCmsQuestion {
+          edges {
+              node {
+                  id
+                  option1
+                  option2
+                  option4
+                  option3
+                  subject
+                  description
+                  answer
+              }
+          }
+      }
   }`;
