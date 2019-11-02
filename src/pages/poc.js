@@ -43,19 +43,19 @@ const PocPage = ({data}) => (
 export default PocPage;
 
 export const query = graphql`
- query allQuestionsQuery {
-  allDatoCmsQuestion {
-    edges {
-      node {
-        option1
-        option2
-        option3
-        option4
-        subject
-        description
-        id
+  query allQuestionsQuery {
+      allDatoCmsQuestion {
+          edges {
+              node {
+                  id
+                  option1
+                  option2
+                  option4
+                  option3
+                  subject
+                  description
+                  answer
+              }
+          }
       }
-    }
-  }
-}
-`;
+  }`;
