@@ -6,26 +6,19 @@ import Layout from "../components/layout";
 const PocPage = ({ data }) => (
   <Layout>
     <Masonry className="showcase">
-      {data.allDatoCmsQuestion.edges.map(({
-                                id,
-                                option1,
-                                option2,
-                                option3,
-                                option4,
-                                description
-                              }) => (
-        <div key={id} className="showcase__item">
+      {data.allDatoCmsQuestion.edges.map(({ node: question }) => (
+        <div key={question.id} className="showcase__item">
           <figure className="card">
             <figcaption className="card__caption">
               <h6 className="card__title">
-                <div>{description}</div>
+                <div>{question.description}</div>
               </h6>
               <div className="card__description">
                 <ul>
-                  <li>{option1}</li>
-                  <li>{option2}</li>
-                  <li>{option3}</li>
-                  <li>{option4}</li>
+                  <li>{question.option1}</li>
+                  <li>{question.option2}</li>
+                  <li>{question.option3}</li>
+                  <li>{question.option4}</li>
                 </ul>
               </div>
             </figcaption>
