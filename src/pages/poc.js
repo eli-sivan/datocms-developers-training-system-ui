@@ -40,7 +40,7 @@ export default PocPage;
 
 export const query = graphql`
   query allQuestionsQuery {
-    allQuestions {
+    allDatoCmsQuestion {
       option1
       option2
       option3
